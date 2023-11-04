@@ -74,4 +74,16 @@ class Marjorie(Scene):
             # animate
             self.play(box.animate.shift(RIGHT*mov[0] + UP*mov[1]), run_time=self.tempo)
             
+        # Never be so clever you for get to be kind
+        t2 = Text("Never be so clever you forget to be kind", font_size=12)
+        t2.set_y(-2)
+        self.add(t2)
+        limit_left = -3
+        for i in range(8):
+            bx = box.get_center()[0]
+            by = box.get_center()[1]
+            print(bx, by)
+            mov = self.move_rectangle(limit_left, limit_right, bx, by)
+            # animate
+            self.play(box.animate.shift(RIGHT*mov[0] + UP*mov[1]), run_time=self.tempo)    
             
