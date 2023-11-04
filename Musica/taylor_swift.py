@@ -32,5 +32,18 @@ class Marjorie(Scene):
             l = math.sqrt(vx*vx + vy*vy)
             vx/=l
             vy/=l
-            
         
+        # Never be so kind you for get to be clever
+        for i in range (8):
+            t = Text("Never be so kind you forget to be clever", font_size=12)
+            t.set_y(2)
+            self.add(t)
+            self.play(box.animate.shift(RIGHT*vx + UP*vy), run_time=5.0/4.0)
+            vx = random.uniform(-2.0,2.0)
+            vy = random.uniform(-2.0,2.0)
+            l = math.sqrt(vx*vx + vy*vy)
+            vx/=l
+            vy/=l
+            # You forget to be clever when x > 2
+            if (box.get_center()[0] + vx > 2):
+                vx = min(vx, -vx)
