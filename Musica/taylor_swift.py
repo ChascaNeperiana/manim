@@ -25,7 +25,7 @@ class Marjorie(Scene):
         
         # Each animation will be done during two beats
         for i in range (6):
-            # The animation corresponds to half of Marjorie's bpm
+            # The animation corresponds to half of Marjorie's beats per minute
             self.play(box.animate.shift(RIGHT*vx + UP*vy), run_time=5.0/4.0)
             vx = random.uniform(-2.0,2.0)
             vy = random.uniform(-2.0,2.0)
